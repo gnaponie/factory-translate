@@ -7,6 +7,9 @@ class Text(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     text = db.Column(db.Text, nullable=False)
     working_on = db.Column(db.Integer)
+    origin_language = db.Column(db.String, nullable=False)
+    requested_language = db.Column(db.String, nullable=False)
+    description = db.Column(db.String, nullable=False)
 
     def __init__(self, text, working_on):
         self.text = text
