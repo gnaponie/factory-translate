@@ -1,11 +1,15 @@
 from flask import Blueprint, request, jsonify
 from werkzeug.exceptions import BadRequest
-import models
+from models import Text
 
-api = Blueprint('api', __name__)
+translate_api = Blueprint('api', __name__)
+
+@translate_api.route('/')
+def main():
+    return 'Factory Translate'
 
 # TODO: change this method to POST
-@api.route("/submit_translation_request", methods=['GET'])
+@translate_api.route("/submit_translation_request", methods=['GET'])
 def submit_translation_request():
     """
         Submit a new translation request. Returns the created item.

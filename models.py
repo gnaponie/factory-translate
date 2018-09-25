@@ -1,5 +1,7 @@
-from factory_translate import db
 
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 class Text(db.Model):
     __tablename__ = 'text'
